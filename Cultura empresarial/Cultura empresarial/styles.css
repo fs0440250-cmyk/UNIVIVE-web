@@ -1,0 +1,657 @@
+/* ==========================================
+   UNIVIVE - Hoja de Estilos Estudiantil
+   Estilo Accesible, Joven y Moderno
+   ========================================== */
+
+:root {
+    --primary: #059669;         /* Verde Esmeralda/Menta estudiantil */
+    --primary-hover: #047857;
+    --secondary: #3b82f6;       /* Azul vibrante */
+    --dark-bg: #0f172a;         /* Azul noche elegante */
+    --bg-page: #f8fafc;         /* Fondo suave */
+    --card-bg: #ffffff;
+    --text-color: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --accent: #f59e0b;
+    --radius: 14px;
+    --shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+/* --- ENCABEZADO --- */
+header {
+    background: var(--dark-bg);
+    color: white;
+    padding: 16px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+    color: var(--primary);
+}
+
+.tagline {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: -4px;
+}
+
+.nav-botones {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secundario {
+    background: transparent;
+    border: 1px solid #475569;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-secundario:hover {
+    background: #1e293b;
+    border-color: var(--primary);
+}
+
+.btn-principal {
+    background: var(--primary);
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-principal:hover {
+    background: var(--primary-hover);
+}
+
+/* --- HERO BUSCADOR --- */
+main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+.hero-estudiantil {
+    background: linear-gradient(135deg, #059669 0%, #2563eb 100%);
+    color: white;
+    padding: 35px 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(5, 150, 105, 0.2);
+}
+
+.hero-texto h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.hero-texto p {
+    font-size: 1.05rem;
+    opacity: 0.95;
+    margin-bottom: 24px;
+}
+
+.buscador-form {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.2fr 1fr auto;
+    gap: 10px;
+    background: white;
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-form label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.campo-form input,
+.campo-form select {
+    border: 1px solid var(--border);
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    outline: none;
+    background: #f8fafc;
+    color: var(--text-color);
+}
+
+.campo-form input:focus,
+.campo-form select:focus {
+    border-color: var(--primary);
+    background: white;
+}
+
+.btn-buscar {
+    background: var(--dark-bg);
+    color: white;
+    border: none;
+    padding: 0 22px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.btn-buscar:hover {
+    background: #1e293b;
+}
+
+/* --- RUTA DE NAVEGACIÓN --- */
+.ruta-navegacion ul {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.ruta-navegacion li::after {
+    content: "›";
+    margin-left: 8px;
+    color: var(--text-muted);
+}
+
+.ruta-navegacion li:last-child::after {
+    content: "";
+}
+
+.ruta-navegacion a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* --- CONTENEDOR RESULTADOS --- */
+.contenedor-resultados h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+
+.layout-resultados {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+/* --- SIDEBAR Y MAPA DE LA ZONA --- */
+.sidebar-estudiantil {
+    width: 270px;
+    flex-shrink: 0;
+}
+
+/* Estilo para cargar la imagen local del mapa */
+.mapa-contenedor {
+    position: relative;
+    height: 130px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 18px;
+    border: 2px solid white;
+    box-shadow: var(--shadow);
+    /* Se utiliza la imagen enviada previamente guardada en la carpeta Imagenes */
+    background: url('Imagenes/mapa-tese.jpg') center/cover no-repeat, url('image_251640.jpg') center/cover no-repeat;
+}
+
+.mapa-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.mapa-overlay:hover {
+    background: rgba(15, 23, 42, 0.7);
+}
+
+.mapa-overlay span {
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.sidebar-estudiantil h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+fieldset {
+    border: 1px solid var(--border);
+    background: white;
+    padding: 14px;
+    border-radius: var(--radius);
+    margin-bottom: 14px;
+    box-shadow: var(--shadow);
+}
+
+fieldset legend {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--text-color);
+    padding: 0 5px;
+}
+
+fieldset label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+/* --- BARRA DE FILTROS Y TARJETAS --- */
+.listado-alojamientos {
+    flex-grow: 1;
+}
+
+.filtros-rapidos {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    padding: 6px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+}
+
+.filtros-rapidos span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0 10px;
+    color: var(--text-muted);
+}
+
+.filtros-rapidos button {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.filtros-rapidos button.activo,
+.filtros-rapidos button:hover {
+    background: #ecfdf5;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* --- TARJETAS ESTUDIANTILES --- */
+.grid-alojamientos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.tarjeta-estudiantil {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    gap: 18px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta-estudiantil:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Imagen de la tarjeta */
+.tarjeta-imagen {
+    position: relative;
+    width: 210px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f1f5f9;
+}
+
+.tarjeta-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge-tag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: var(--dark-bg);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.badge-tag.economico {
+    background: var(--primary);
+}
+
+/* Información Central */
+.tarjeta-contenido {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-contenido h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-color);
+}
+
+.ubicacion {
+    font-size: 0.82rem;
+    color: var(--secondary);
+    font-weight: 700;
+    margin: 2px 0 6px 0;
+}
+
+.descripcion {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.servicios-mini {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.servicios-mini span {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.btn-ver-mas {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn-ver-mas:hover {
+    text-decoration: underline;
+}
+
+/* Bloque de Precio y Contacto a la Derecha */
+.tarjeta-precio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-width: 175px;
+    border-left: 1px solid var(--border);
+    padding-left: 18px;
+}
+
+.calificacion-estudiantil {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.calificacion-estudiantil span {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.calificacion-estudiantil .nota {
+    background: #ecfdf5;
+    color: var(--primary);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-top: 2px;
+}
+
+.precio-bloque {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.label-precio {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.monto {
+    font-size: 1.3rem;
+    color: var(--primary);
+    font-weight: 900;
+}
+
+.periodo {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.btn-contactar {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-contactar:hover {
+    background: var(--primary-hover);
+}
+
+/* --- BLOQUES SECUNDARIOS --- */
+.seccion-bloque {
+    background: white;
+    padding: 24px;
+    border-radius: var(--radius);
+    margin-top: 25px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.seccion-bloque h2 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+/* Grid de opiniones */
+.grid-opiniones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.card-opinion {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    padding: 16px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.opinion-txt {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.autor strong {
+    display: block;
+    font-size: 0.85rem;
+}
+
+.autor span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Accordions FAQ */
+.faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+details {
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+summary {
+    font-weight: 700;
+    color: var(--secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+details p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-top: 6px;
+}
+
+/* Formulario Contacto */
+.contacto-bloque .form-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin-top: 12px;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #f8fafc;
+    font-size: 0.9rem;
+}
+
+/* FOOTER */
+footer {
+    background: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 24px;
+    margin-top: 40px;
+    font-size: 0.85rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 850px) {
+    .buscador-form {
+        grid-template-columns: 1fr;
+    }
+    .layout-resultados {
+        flex-direction: column;
+    }
+    .sidebar-estudiantil {
+        width: 100%;
+    }
+    .tarjeta-estudiantil {
+        flex-direction: column;
+    }
+    .tarjeta-imagen {
+        width: 100%;
+        height: 170px;
+    }
+    .tarjeta-precio {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding-left: 0;
+        padding-top: 12px;
+        align-items: flex-start;
+        width: 100%;
+    }
+}

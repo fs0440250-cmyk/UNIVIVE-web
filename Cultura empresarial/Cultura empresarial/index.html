@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIVIVE - Tu Depa Estudiantil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado Estudiantil -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <span class="logo-text">UNI<span>VIVE</span></span>
+                <span class="tagline">Alojamiento universitario</span>
+            </a>
+        </div>
+
+        <nav>
+            <div class="nav-botones">
+                <button type="button" class="btn-secundario">Publicar mi depa</button>
+                <button type="button" class="btn-secundario">Registrarse</button>
+                <button type="button" class="btn-principal">Iniciar sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Buscador por Semestres y Universidad (Hero) -->
+        <section class="hero-estudiantil">
+            <div class="hero-texto">
+                <h1>Renta tu cuarto o depa cerca del campus</h1>
+                <p>Alojamiento seguro, amueblado y sin trámites complicados. Renta por semestres con tus compañeros.</p>
+            </div>
+
+            <form class="buscador-form">
+                <div class="campo-form">
+                    <label for="destino">🎓 Universidad / Zona</label>
+                    <input type="text" id="destino" placeholder="Ej. TESE, Valle de Aragón, Ecatepec...">
+                </div>
+
+                <div class="campo-form">
+                    <label for="semestres">📅 Estancia estimada</label>
+                    <select id="semestres">
+                        <option value="1">1 Semestre (6 meses)</option>
+                        <option value="2">1 Año (2 semestres)</option>
+                        <option value="3">Verano / Curso intensivo</option>
+                        <option value="4">Estancia completa (3+ semestres)</option>
+                    </select>
+                </div>
+
+                <div class="campo-form">
+                    <label for="tipo-alojamiento">🏠 Modalidad</label>
+                    <select id="tipo-alojamiento">
+                        <option value="todas">Cualquiera</option>
+                        <option value="habitacion-privada">Habitación propia</option>
+                        <option value="compartida">Compartir cuarto</option>
+                        <option value="depa-completo">Depa para el grupo</option>
+                    </select>
+                </div>
+
+                <div class="campo-form">
+                    <label for="ocupacion">👥 Estudiantes</label>
+                    <select id="ocupacion">
+                        <option value="1">1 Persona</option>
+                        <option value="2">2 Roomies</option>
+                        <option value="3">Grupo (3+ estudiantes)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-buscar">Buscar alojamiento</button>
+            </form>
+        </section>
+
+        <!-- Navegación de ruta -->
+        <nav aria-label="Navegación de ruta" class="ruta-navegacion">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Edomex</a></li>
+                <li><a href="#">Ecatepec</a></li>
+                <li><span>Zonas cercanas al TESE</span></li>
+            </ul>
+        </nav>
+
+        <!-- Sección Principal de Resultados -->
+        <section class="contenedor-resultados">
+            <h2>Alojamientos disponibles cerca de ti</h2>
+
+            <div class="layout-resultados">
+                <!-- Sidebar con Mapa de Ubicación y Filtros Estudiantiles -->
+                <aside class="sidebar-estudiantil">
+                    
+                    <!-- Tarjeta Visual del Mapa -->
+                    <div class="mapa-contenedor">
+                        <div class="mapa-overlay">
+                            <span>📍 Ver alojamientos cerca del TESE</span>
+                        </div>
+                    </div>
+                    
+                    <h3>Filtrar por necesidades:</h3>
+                    
+                    <fieldset>
+                        <legend>Tipo de espacio</legend>
+                        <label><input type="checkbox"> Habitación individual</label>
+                        <label><input type="checkbox"> Habitación compartida</label>
+                        <label><input type="checkbox"> Depa completo estudiantil</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Presupuesto mensual</legend>
+                        <label><input type="checkbox"> Menos de $2,500 MXN</label>
+                        <label><input type="checkbox"> $2,500 - $3,500 MXN</label>
+                        <label><input type="checkbox"> $3,500 - $5,000 MXN</label>
+                        <label><input type="checkbox"> Más de $5,000 MXN</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Servicios e Instalaciones</legend>
+                        <label><input type="checkbox" checked> Wi-Fi de alta velocidad</label>
+                        <label><input type="checkbox"> Escritorio de estudio propio</label>
+                        <label><input type="checkbox"> Servicios incluidos (Luz/Agua/Gas)</label>
+                        <label><input type="checkbox"> Cocina equipada</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Cercanía al campus</legend>
+                        <label><input type="checkbox"> Caminando (Menos de 10 min)</label>
+                        <label><input type="checkbox"> 1 camión / transporte directo</label>
+                    </fieldset>
+                </aside>
+
+                <!-- Listado de Inmuebles -->
+                <div class="listado-alojamientos">
+                    
+                    <!-- Barra de Ordenamiento -->
+                    <div class="filtros-rapidos">
+                        <span>Ordenar:</span>
+                        <button type="button" class="activo">Recomendados para el TESE</button>
+                        <button type="button">Más económicos</button>
+                        <button type="button">Mejor ambiente estudiantil</button>
+                    </div>
+
+                    <!-- Lista de Tarjetas Estudiantiles -->
+                    <div class="grid-alojamientos">
+                        
+                        <!-- Tarjeta 1 -->
+                        <article class="tarjeta-estudiantil">
+                            <div class="tarjeta-imagen">
+                                <img src="Imagenes/Departamento.png" alt="Depa amueblado" onerror="this.src='https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=500&q=80'">
+                                <span class="badge-tag">Cerca del campus</span>
+                            </div>
+                            
+                            <div class="tarjeta-contenido">
+                                <h3>Departamento Amueblado para Estudiantes</h3>
+                                <p class="ubicacion">📍 Zona Universitaria Ecatepec (a 5 min del TESE)</p>
+                                <p class="descripcion">Excelente espacio amueblado con escritorio de estudio, Wi-Fi rápido y cocina equipada. Ideal para renta por semestres.</p>
+                                
+                                <div class="servicios-mini">
+                                    <span>📶 Wi-Fi rápido</span>
+                                    <span>💡 Servicios incluidos</span>
+                                    <span>🪑 Escritorio</span>
+                                </div>
+
+                                <a href="#" class="btn-ver-mas">Ver detalles y fotos</a>
+                            </div>
+
+                            <div class="tarjeta-precio">
+                                <div class="calificacion-estudiantil">
+                                    <span>Muy recomendado</span>
+                                    <span class="nota">9.2 / 10</span>
+                                </div>
+                                <div class="precio-bloque">
+                                    <span class="label-precio">Renta mensual</span>
+                                    <strong class="monto">$3,500 MXN</strong>
+                                    <span class="periodo">Contrato semestral</span>
+                                    <button type="button" class="btn-contactar">Contactar / Agendar cita</button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Tarjeta 2 -->
+                        <article class="tarjeta-estudiantil">
+                            <div class="tarjeta-imagen">
+                                <img src="Imagenes/Habitacion1.png" alt="Habitación Privada" onerror="this.src='https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=500&q=80'">
+                                <span class="badge-tag economico">Opción económica</span>
+                            </div>
+                            
+                            <div class="tarjeta-contenido">
+                                <h3>Habitación Privada en Casa Estudiantil</h3>
+                                <p class="ubicacion">📍 Valle de Aragón 3ra Sección</p>
+                                <p class="descripcion">Habitación individual iluminada con cama y closet. Áreas comunes compartidas en ambiente tranquilo para estudiar.</p>
+                                
+                                <div class="servicios-mini">
+                                    <span>⚡ Luz y agua incl.</span>
+                                    <span>📶 Wi-Fi</span>
+                                    <span>🔒 Cerradura propia</span>
+                                </div>
+
+                                <a href="#" class="btn-ver-mas">Ver detalles y fotos</a>
+                            </div>
+
+                            <div class="tarjeta-precio">
+                                <div class="calificacion-estudiantil">
+                                    <span>Excelente ambiente</span>
+                                    <span class="nota">9.5 / 10</span>
+                                </div>
+                                <div class="precio-bloque">
+                                    <span class="label-precio">Renta mensual</span>
+                                    <strong class="monto">$2,800 MXN</strong>
+                                    <span class="periodo">Contrato semestral</span>
+                                    <button type="button" class="btn-contactar">Contactar / Agendar cita</button>
+                                </div>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Opiniones de Compañeros -->
+        <section class="seccion-bloque">
+            <h2>Experiencias de otros estudiantes</h2>
+            <div class="grid-opiniones">
+                <article class="card-opinion">
+                    <p class="opinion-txt">"Super cómodo rentar por semestre sin que te pidan avales imposibles. La zona es muy tranquila para caminar al TESE."</p>
+                    <div class="autor">
+                        <strong>Carlos M.</strong>
+                        <span>Estudiante de Sistemas (TESE)</span>
+                    </div>
+                </article>
+
+                <article class="card-opinion">
+                    <p class="opinion-txt">"Encontré roomies con los que comparto departamento y dividimos los gastos de renta y servicios súper barato."</p>
+                    <div class="autor">
+                        <strong>Valeria G.</strong>
+                        <span>Estudiante UNIVIVE</span>
+                    </div>
+                </article>
+
+                <article class="card-opinion">
+                    <p class="opinion-txt">"El internet es rápido para las tareas y el contrato fue clarísimo desde el primer día."</p>
+                    <div class="autor">
+                        <strong>Andrea P.</strong>
+                        <span>Estudiante de Industrial</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Preguntas Frecuentes -->
+        <section class="seccion-bloque">
+            <h2>Dudas frecuentes sobre renta estudiantil</h2>
+            <div class="faq-grid">
+                <details>
+                    <summary>¿Se renueva el contrato al terminar el semestre?</summary>
+                    <p>Sí, puedes renovar por otro semestre o liberarlo durante las vacaciones de verano si regresas a casa.</p>
+                </details>
+                <details>
+                    <summary>¿Necesito un fiador o aval con propiedad?</summary>
+                    <p>No, nuestras opciones para estudiantes aceptan credencial escolar vigente e identificación para simplificar tu trámite.</p>
+                </details>
+                <details>
+                    <summary>¿Puedo apartar un departamento con anticipación?</summary>
+                    <p>Sí, puedes agendar tu espacio semanas antes de que inicie tu ciclo escolar o semestre universitario.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section class="seccion-bloque contacto-bloque">
+            <h2>¿Buscas roomie o ayuda para elegir?</h2>
+            <p>Escríbenos y un asesor estudiante te apoyará para encontrar tu lugar ideal.</p>
+            <form class="form-contacto">
+                <input type="text" placeholder="Tu nombre completo">
+                <input type="email" placeholder="Correo institucional o personal">
+                <textarea rows="3" placeholder="¿En qué universidad estudias y qué presupuesto buscas?"></textarea>
+                <button type="submit" class="btn-principal">Enviar mensaje</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>UNIVIVE</strong> - Conecta, Estudia y Vive 🎓</p>
+        <p>&copy; 2026 UNIVIVE. La comunidad de alojamiento universitario.</p>
+    </footer>
+
+</body>
+</html>
